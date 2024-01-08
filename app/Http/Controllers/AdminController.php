@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
-use App\Models\Feature;
+use App\Models\Fitur;
 use App\Models\Category;
 
 class AdminController extends Controller
@@ -48,7 +48,7 @@ class AdminController extends Controller
     public function fitur() {
         $data = [
             'title' => 'Fitur',
-            'data' => Feature::all()
+            'data' => Fitur::all()
         ];
 
         return view('admin.fitur', $data);

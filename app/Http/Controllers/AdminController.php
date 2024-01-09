@@ -48,7 +48,7 @@ class AdminController extends Controller
     public function fitur() {
         $data = [
             'title' => 'Fitur',
-            'data' => Fitur::all()
+            'data' => Fitur::with('category')->get()
         ];
 
         return view('admin.fitur', $data);

@@ -130,7 +130,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="name">Nama Category</label>
-                            <input type="text" id="name" value="{{ $u->name }}" class="form-control round" name="name_cat" required autocomplete="off">
+                            <input type="text" id="name" value="{{ $u->name_cat }}" class="form-control round" name="name_cat" required autocomplete="off">
                         </div>
                     </div>
                     <div class="modal-footer">

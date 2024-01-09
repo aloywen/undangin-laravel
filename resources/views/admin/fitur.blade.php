@@ -62,7 +62,7 @@
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $u->name }}</td>
-                        <td>{{ $u->category_id }}</td>
+                        <td>{{ $u->category->name_cat }}</td>
                         <td>
                             <button class="btn badge bg-warning" data-bs-toggle="modal" data-bs-target="#exampleModalLongEdit{{ $u->id }}">Edit</button>
                             <a href="/panel/deletefitur/{{ $u->id }}">

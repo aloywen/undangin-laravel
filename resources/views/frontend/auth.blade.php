@@ -24,20 +24,28 @@
         <div id="auth-left">
             <h1 class="auth-title">Masuk.</h1>
 
-            <form action="index.html">
+            @if (session('loginError'))
+                <div class="alert alert-danger alert-dismissible show fade">
+                    {{ session('loginError') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            <form action="{{ route('auth') }}" method="POST">
+                @csrf
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="text" class="form-control form-control-xl" placeholder="Username">
+                    <input type="email" class="form-control form-control-xl" name="email" value="{{ old('email') }}" placeholder="example.gmail.com" required>
                     <div class="form-control-icon">
                         <i class="bi bi-person"></i>
                     </div>
                 </div>
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="password" class="form-control form-control-xl" placeholder="Password">
+                    <input type="password" class="form-control form-control-xl" placeholder="Password" name="password" required>
                     <div class="form-control-icon">
                         <i class="bi bi-shield-lock"></i>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Masuk</button>
+                <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Masuk</button>
             </form>
             <div class="text-center mt-5 text-lg fs-4">
                 <p class="text-gray-600">Belum Punya Akun? <a href="{{ url('/regist') }}" class="font-bold">Daftar</a>.</p>

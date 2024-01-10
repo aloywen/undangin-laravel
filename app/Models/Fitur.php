@@ -20,6 +20,7 @@ class Fitur extends Model
     const UPDATED_AT = 'updated_at';
 
     
+    
     public function category() {
         return $this->belongsTo(Category::class);
     }

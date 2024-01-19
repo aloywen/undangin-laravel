@@ -140,7 +140,13 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Category</label>
-                            <input type="text" id="name" value="{{ $u->category_id }}" class="form-control round" name="category_id" required autocomplete="off">
+                            {{-- <input type="text" id="name" value="{{ $u->category_id }}" class="form-control round" name="category_id" required autocomplete="off"> --}}
+                            <fieldset class="form-group">
+                                <select class="form-select" id="basicSelect">
+                                    
+                                    <option value="{{ $u->category_id }}">{{ $u->name_cat }}</option>
+                                </select>
+                            </fieldset>
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -13,22 +13,38 @@
   <link rel="stylesheet" href="dist//assets/compiled/css/app.css">
   <link rel="stylesheet" href="dist//assets/compiled/css/app-dark.css">
   <link rel="stylesheet" href="dist//assets/compiled/css/auth.css">
+  @vite('resources/css/app.css')
 </head>
 
 <body>
-    {{-- <script src="dist/assets/static/js/initTheme.js"></script> --}}
-    
-    <p>Home Page</p>
 
-    <a href="{{ url('/auth') }}">
-        <button class="btn btn-primary">Login</button>
-    </a>
+    <div>
 
-    <a href="{{ url('/regist') }}">
-        <button class="btn btn-warning">Register</button>
-    </a>
-    
+        <nav class="flex justify-around items-center py-3 border-b-2 border-gray-400">
+            <div><a href="{{ route('home') }}">Undangin.</a></div>
+            <div class="flex flex-col md:flex-row items-center gap-5">
+                <a href="{{ route('tema') }}"><p class="font-primary text-xl font-semibold text-gray-500">Tema</p></a>
+                <a href="{{ route('harga') }}"><p class="font-primary text-xl font-semibold text-gray-500">Harga</p></a>
+                <a href="{{ route('portfolio') }}"><p class="font-primary text-xl font-semibold text-gray-500">Portfolio</p></a>
 
+                <div class="flex gap-2">
+                    <a href="{{ url('/auth') }}">
+                        <button class="border-1 border-primary1 px-3 py-1 rounded-lg shadow-sm ">Login</button>
+                    </a>
+                    
+                    <a href="{{ url('/regist') }}">
+                        <button class="bg-primary1 px-3 py-1 text-white border-1 rounded-lg border-gray-400 shadow-sm">Daftar</button>
+                    </a>
+
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+            @yield('section')
+        </div>
+        
+    </div>
 </body>
 
 </html>

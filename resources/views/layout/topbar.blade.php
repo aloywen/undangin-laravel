@@ -28,7 +28,7 @@
                                             <img src="./assets/compiled/jpg/1.jpg">
                                         </div>
                                     </div>
-                                </div>
+                                </div> 
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton" style="min-width: 11rem;">
                                 <li>

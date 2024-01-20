@@ -13,7 +13,7 @@ class LoginController extends Controller
             'title' => 'Login'
         ];
 
-        return view('frontend.auth', $data);
+        return view('frontend.login.auth', $data);
     }
 
     public function authenticate(Request $request)
@@ -41,7 +41,7 @@ class LoginController extends Controller
     
         $request->session()->regenerateToken();
     
-        return redirect('/auth');
+        return redirect('/');
     }
 
     public function regist() {
@@ -49,7 +49,7 @@ class LoginController extends Controller
             'title' => 'Register'
         ];
 
-        return view('frontend.regist', $data);
+        return view('frontend.login.regist', $data);
     }
 
     public function registPost(Request $request) {
@@ -61,6 +61,6 @@ class LoginController extends Controller
             'title' => 'Forgot Password'
         ];
 
-        return view('frontend.forgotpassword', $data);
+        return view('frontend..login.forgotpassword', $data);
     }
 }

@@ -19,6 +19,7 @@
 
 
     <link rel="stylesheet" href="{{ url('dist/assets/compiled/css/table-datatable.css') }}">
+    <link rel="stylesheet" href="{{ url('dist/assets/extensions/choices.js/public/assets/styles/choices.css') }}">
 </head>
 
 <body>

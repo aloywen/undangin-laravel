@@ -14,12 +14,14 @@ use App\Http\Controllers\CategoryController;
 //     return view('welcome');
 // }); 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/tema', [HomeController::class, 'tema'])->name('tema');
+Route::get('/harga', [HomeController::class, 'harga'])->name('harga');
+Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
 
 Route::group(['middleware' => 'guest'],function () {
     Route::get('/auth', [LoginController::class, 'auth']);
     Route::post('/auth', [LoginController::class, 'authenticate'])->name('auth');
-    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/regist', [LoginController::class, 'regist']);
     Route::post('/regist', [LoginController::class, 'registPost'])->name('register');
     Route::get('/forgotpassword', [LoginController::class, 'forgotpassword']);
@@ -27,7 +29,8 @@ Route::group(['middleware' => 'guest'],function () {
 });
 
 Route::group(['middleware' => 'auth'],function () {
-
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    
     Route::controller(AdminController::class)->group(function () {
         Route::get('/panel/dashboard','index');
         Route::get('/panel/role', 'role');

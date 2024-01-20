@@ -21,6 +21,9 @@
 <script src="{{ url('dist/assets/extensions/simple-datatables/umd/simple-datatables.js') }}"></script>
 <script src="{{ url('dist/assets/static/js/pages/simple-datatables.js') }}"></script>
 
+<script src="{{ url('dist/assets/extensions/choices.js/public/assets/scripts/choices.js') }}"></script>
+<script src="{{ url('dist/assets/static/js/pages/form-element-select.js') }}"></script>
+
 </body>
 
 </html>

@@ -114,41 +114,41 @@
     </div>
 
     {{-- modal edit data --}}
-@foreach ($data as $u)
-    <div class="modal fade" id="exampleModalLongEdit{{ $u->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <form action="/panel/updaterole/{{ $u->id }}" method="POST">
-                @csrf
-                <div class="modal-content">
-                    <div class="modal-header bg-primary">
-                        <h5 class="modal-title text-white" id="exampleModalLongTitle">Edit Data Role</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal"
-                            aria-label="Close">
-                            <i data-feather="x"></i>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="name">Nama Role</label>
-                            <input type="text" id="name" value="{{ $u->name }}" class="form-control round" name="name" required autocomplete="off">
+    @foreach ($data as $u)
+        <div class="modal fade" id="exampleModalLongEdit{{ $u->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <form action="/panel/updaterole/{{ $u->id }}" method="POST">
+                    @csrf
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary">
+                            <h5 class="modal-title text-white" id="exampleModalLongTitle">Edit Data Role</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal"
+                                aria-label="Close">
+                                <i data-feather="x"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="name">Nama Role</label>
+                                <input type="text" id="name" value="{{ $u->name }}" class="form-control round" name="name" required autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light-secondary"
+                                data-bs-dismiss="modal">
+                                <i class="bx bx-x d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Close</span>
+                            </button>
+
+                            <button type="submit" class="btn btn-primary ms-1" data-bs-dismiss="modal">
+                                <i class="bx bx-check d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Accept</span>
+                            </button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light-secondary"
-                            data-bs-dismiss="modal">
-                            <i class="bx bx-x d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Close</span>
-                        </button>
-
-                        <button type="submit" class="btn btn-primary ms-1" data-bs-dismiss="modal">
-                            <i class="bx bx-check d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Accept</span>
-                        </button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
-@endforeach
+    @endforeach
 
 @endsection
